@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="600.0" text="View" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController2">
+   <content>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TreeTableView fx:id="TreeTableView" layoutX="341.0" layoutY="14.0" prefHeight="400.0" prefWidth="225.0">
+              <columns>
+                <TreeTableColumn prefWidth="75.0" text="Size" />
+                  <TreeTableColumn prefWidth="75.0" text="Price" />
+                <TreeTableColumn prefWidth="75.0" text="Colour" />
+              </columns>
+            </TreeTableView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </content>
+</TitledPane>
