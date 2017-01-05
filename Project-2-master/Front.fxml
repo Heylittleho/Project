@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="600.0" style="-fx-background-color: #F8F9F9; -fx-border-color: #CACFD2;" text="Clothes app" textAlignment="CENTER" textFill="#393232" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #FBEEE6;">
+         <children>
+            <MenuButton layoutX="512.0" layoutY="413.0" mnemonicParsing="false" style="-fx-background-color: #F6DDCC;" text="Language">
+              <items>
+                  <Menu mnemonicParsing="false" text="Chinese">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Spanish" />
+                      <MenuItem mnemonicParsing="false" text="English" />
+                      <MenuItem mnemonicParsing="false" text="French" />
+                        <MenuItem mnemonicParsing="false" text="Italian" />
+                    </items>
+                  </Menu>
+              </items>
+               <font>
+                  <Font name="DotumChe" size="12.0" />
+               </font>
+            </MenuButton>
+            <ScrollBar layoutX="583.0" layoutY="3.0" orientation="VERTICAL" prefHeight="593.0" prefWidth="14.0" />
+            <TextField fx:id="searchTextField" layoutX="429.0" layoutY="6.0" prefHeight="24.0" prefWidth="153.0" promptText="..." />
+            <Button fx:id="searchButton" layoutX="374.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#goClicked" prefHeight="25.0" prefWidth="55.0" text="Search">
+               <font>
+                  <Font name="DotumChe" size="12.0" />
+               </font>
+            </Button>
+            <MenuButton layoutX="21.0" layoutY="18.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #EAFAF1;" text="Clothing">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Bottoms" />
+                <MenuItem mnemonicParsing="false" text="Tops" />
+                  <MenuItem mnemonicParsing="false" text="OuterWear" />
+              </items>
+               <font>
+                  <Font name="DotumChe" size="12.0" />
+               </font>
+            </MenuButton>
+            <ListView fx:id="mainListView" layoutX="298.0" layoutY="238.0" onMouseClicked="#listViewClicked" prefHeight="180.0" prefWidth="180.0" />
+            <Button fx:id="exitButton" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#exitClicked" prefHeight="25.0" prefWidth="55.0" text="Exit" />
+            <Button fx:id="addButton" layoutX="497.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#addClicked" prefHeight="25.0" prefWidth="55.0" text="Add" />
+            <Button fx:id="editButton" layoutX="497.0" layoutY="265.0" mnemonicParsing="false" onMouseClicked="#editClicked" prefHeight="25.0" prefWidth="55.0" text="Edit" />
+            <Button fx:id="deleteButton" layoutX="497.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#deleteClicked" prefHeight="25.0" prefWidth="55.0" text="Delete" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="71.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
+            <BorderPane layoutX="181.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+         </children></AnchorPane>
+  </content>
+   <font>
+      <Font name="DotumChe" size="14.0" />
+   </font>
+</TitledPane>
