@@ -23,7 +23,7 @@ private static void start()
 
 
             Stage stage = new Stage();
-            stage.setTitle("PrimaryScene.fxml");
+            stage.setTitle("Clothes organiser");
             stage.setScene(new Scene(loader.load()));
             stage.show();           
 
@@ -42,8 +42,6 @@ private static void start()
     {
         System.out.println("Closing database connection and terminating application...");  
         if (database != null) database.disconnect();
-
-       
         System.exit(0);
     }
 

@@ -3,7 +3,7 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.util.List;
 
-public class Clothes
+public class Pattern
 {
 
     public int ClothesID;
@@ -15,7 +15,7 @@ public class Clothes
     public String Names;
 
 
-    public Clothes(int ClothesID, int ColourID, int PatternID, int TypeID, int BrandID, String Names)
+    public Pattern(int ClothesID, int ColourID, int PatternID, int TypeID, int BrandID, String Names)
     {
         this.ClothesID = ClothesID;        
         this.ColourID = ColourID;
