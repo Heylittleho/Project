@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=ClothesID\ ColourID\ PatternID\ TypeID\ BrandID\ Names
-comment0.target=Clothes(int,\ int,\ int,\ int,\ int,\ java.lang.String)
+comment0.target=Brand(int,\ int,\ int,\ int,\ int,\ java.lang.String)
 comment1.params=
 comment1.target=java.lang.String\ toString()
 comment2.params=list

@@ -53,7 +53,11 @@ public class SceneController
         {
             System.out.println("FXML assertion failure: " + ae.getMessage());
             Application.terminate();
-        }           
+        }      
+         System.out.println("Populating scene with items from the database...");        
+        @SuppressWarnings("unchecked")
+        List<Clothes> targetList = mainListView.getItems(); 
+        Clothes.readAll(targetList);
     }
 
     
@@ -63,8 +67,10 @@ public class SceneController
 
       SceneController.stage = stage;
 
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                public void handle(WindowEvent we) {
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() 
+        {
+                public void handle(WindowEvent we) 
+                {
                     System.out.println("Close button was clicked!");
                     Application.terminate();
                 }
@@ -79,39 +85,27 @@ public class SceneController
 
     @FXML   void addClicked()
     {
-        System.out.println("Add was clicked, opening secondary scene.");
-        
-      
-        
-        try
-          
         {
-            FXMLLoader loader= new FXMLLoader(Application.class.getResource("SecondScene.fxml"));
-            
-            Stage stage=new Stage();
-            stage.setTitle(" Secondary Scene");
-            stage.setScene(new Scene(loader.load()));
-            stage.show();
-            
-            SceneController controller = loader.getController();
-            controller.prepareStageEvents(stage);
-            
-        }
-        catch (Exception ex)
-        { System.out.println(ex.getMessage());
-           
+        System.out.println("Add was clicked, opening secondary scene.");
+        openNewScene(0);
+      
+    
         }
     }
 
     @FXML   void editClicked()
     {
         System.out.println("Edit was clicked, opening secondary scene.");
+        Clothes selectedItem = ((Clothes) mainListView.getSelectionModel().getSelectedItem());
+        openNewScene(selectedItem.id);
     }
 
     @FXML   void deleteClicked()
     {
         System.out.println("Delete was clicked!");
-        
+        Clothes selectedItem = (Clothes) mainListView.getSelectionModel().getSelectedItem();
+        Clothes.deleteById(selectedItem.id);
+        initialize();
     }
 
     @FXML   void goClicked()
@@ -129,9 +123,40 @@ public class SceneController
     @FXML   void listViewClicked()
     {
         System.out.println("List was clicked!");
+        Clothes selectedItem = (Clothes) mainListView.getSelectionModel().getSelectedItem();
+        if(selectedItem==null)
+        {
+            System.out.println("Nothing selected!");
+        }
+        else {
+            System.out.println(selectedItem+ " (id: "+ selectedItem.id+ ")is selected. ");
       }
+    }
+    void openNewScene(int id)
+    {
+
+        FXMLLoader loader = new FXMLLoader(Application.class.getResource("SecondaryScene.fxml"));
+
+        try
+        {
+            Stage stage2 = new Stage();
+            stage2.setTitle("Details");
+            stage2.setScene(new Scene(loader.load()));
+            stage2.show();           
+            SceneController2 controller2 = loader.getController();
+            controller2.prepareStageEvents(stage2);
+
+            controller2.setParent(this);
+               
+
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
 
     
 
     }
+}
 
